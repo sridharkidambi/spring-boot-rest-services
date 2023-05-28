@@ -4,4 +4,4 @@ resilience4j:
       stockService:
        limit-for-period: 2
        limit-refresh-period: 5s
-       timeout-duration: 5s
+       timeout-duration: 6s
