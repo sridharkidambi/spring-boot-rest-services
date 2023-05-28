@@ -39,11 +39,13 @@ public class WelcomeController {
 
         try {
 //            Thread.sleep(2000);
-
-//            for (int i = 0; i < 10; i++) {
-//                System.out.println("calling count" + i);
-              String s=  externalapicalls.ExternalAPI();
-//            }
+            String s="";
+            for (int i = 0; i < 10; i++) {
+               System.out.println("calling count" + i);
+               s=  externalapicalls.ExternalAPI();
+                System.out.println("calling count completes" + i);
+                System.out.println(s);
+           }
 //            return externalapicalls.ExternalAPI();
             if(!(s.contains("fallbackcalls")))
             return new ResponseEntity<>(s, HttpStatus.OK);

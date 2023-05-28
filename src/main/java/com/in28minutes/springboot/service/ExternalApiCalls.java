@@ -20,12 +20,14 @@ public class ExternalApiCalls {
     private  RestTemplate restTemplate;
 
 
-    @RateLimiter(name="name2", fallbackMethod = "getFallbackStocks")
+    @RateLimiter(name="rateLimiterApi" , fallbackMethod = "getFallbackStocks")
     public String ExternalAPI() throws InterruptedException {
+        Integer iCount=0;
         try {
-        Thread.sleep(1000);
+            Thread.sleep(2000);
             System.out.println("time making the call: " + LocalDateTime.now().toString());
             String s = restTemplate.getForObject("https://yahoo.com", String.class);
+            System.out.println("normal processing");
             return "normal processing";
         } catch (Exception e){
            throw  e;
